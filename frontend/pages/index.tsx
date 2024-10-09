@@ -7,7 +7,10 @@ import CarouselComponent from "@/components/carousel";
 const Home: React.FC = () => {
   return (
     <div>
-      <CarouselComponent></CarouselComponent>
+      <section id="carousel-container" className="p-32 py-0  ">
+        <CarouselComponent></CarouselComponent>
+      </section>
+
       <ul>
         <li>
           <Link href="/recipeCategory/doces">Doces</Link>
