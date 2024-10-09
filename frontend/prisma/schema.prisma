@@ -19,8 +19,8 @@ model Receita {
   descricao    String?  
   cookingTime  String?
   serves       String?
-  font         String
-  ingredientes String
+  font         String[]
+  ingredientes String[]
   categoriaId  Int      
   categoria    Categoria @relation(fields: [categoriaId], references: [id]) 
 }
