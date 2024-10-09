@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "../pages/index";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,6 +36,8 @@ export default function RootLayout({
           </div>
           <span className="h-px w-full bg-red-500"></span>
         </div>
+        <Link href="/">Home </Link>
+        <Link href="/Recipes">Recipes</Link>
       </header>
 
       {children}

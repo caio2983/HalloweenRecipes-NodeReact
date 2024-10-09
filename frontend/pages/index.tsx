@@ -1,11 +1,22 @@
 import React from "react";
 import Image from "next/image";
 import "../app/globals.css";
+import Link from "next/link";
 
 const Home: React.FC = () => {
   return (
     <div>
-      <h1>Home page</h1>
+      <ul>
+        <li>
+          <Link href="/recipeCategory/doces">Doces</Link>
+        </li>
+        <li>
+          <Link href="/recipeCategory/bebidas">Bebidas</Link>
+        </li>
+        <li>
+          <Link href="/recipeCategory/sobremesas">Sobremesas</Link>
+        </li>
+      </ul>
     </div>
   );
 };
