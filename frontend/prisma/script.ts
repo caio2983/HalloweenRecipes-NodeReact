@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 async function main() {
   const categoria = await prisma.categoria.create({
     data: {
-      nome: 'Sobremesas',
+      nome: 'Bolos',
     },
   });
   console.log(categoria);
