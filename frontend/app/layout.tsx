@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "../pages/index";
 import Link from "next/link";
+import Image from "next/image";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,9 +31,23 @@ export default function RootLayout({
       <header className="h-[20vh] flex items-center justify-center">
         <div className="flex flex-col items-center justify-center w-1/2 gap-5">
           <div className="flex w-full justify-center gap-12 items-center">
-            <span className="h-[34px] w-[64px] bg-[url('public/images/pumpkin.gif')]"></span>
+            <span className="h-[34px] w-[64px] relative">
+              <Image
+                src="/images/pumpkin.gif"
+                layout="fill"
+                objectFit="cover"
+                alt="pumpkin gif"
+              ></Image>
+            </span>
             <h1>Halloween Recipes</h1>
-            <span className="h-[34px] w-[64px] bg-[url('public/images/pumpkin.gif')] "></span>
+            <span className="h-[34px] w-[64px]  relative">
+              <Image
+                src="/images/pumpkin.gif"
+                layout="fill"
+                objectFit="cover"
+                alt="pumpkin gif"
+              ></Image>
+            </span>
           </div>
           <span className="h-px w-full bg-red-500"></span>
         </div>
