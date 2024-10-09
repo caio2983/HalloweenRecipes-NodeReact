@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="h-1/4 flex items-center justify-center">
+        <header className="h-[75px] flex items-center justify-center">
           <div className="flex flex-col items-center justify-center w-1/2 gap-5">
             <div className="flex w-full justify-center gap-12 items-center">
               <span className="h-[34px] w-[64px] bg-[url('public/images/pumpkin.gif')]"></span>
