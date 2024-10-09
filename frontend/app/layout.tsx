@@ -41,6 +41,8 @@ export default function RootLayout({
         </header>
 
         {children}
+
+        <footer></footer>
       </body>
     </html>
   );

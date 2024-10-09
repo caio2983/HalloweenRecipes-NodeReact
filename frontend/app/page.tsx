@@ -19,6 +19,15 @@ export default function Home() {
       <section id="recipe" className="flex">
         <div id="ingredients" className="w-1/4 h-[500px] bg-red-500">
           <h2>Ingredients</h2>
+          <ul>
+            <li>125g/4½oz unsalted butter, softened</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
         </div>
 
         <div id="instructions" className="w-3/4 h-[850px] bg-cyan-500">
