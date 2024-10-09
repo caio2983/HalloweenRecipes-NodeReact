@@ -1,6 +1,7 @@
 import RootLayout from "../app/layout";
 import { AppProps } from "next/app";
 import { Metadata } from "next";
+import "../app/globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
