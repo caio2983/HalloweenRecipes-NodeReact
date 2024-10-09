@@ -3,6 +3,7 @@ import Image from "next/image";
 import "../app/globals.css";
 import Link from "next/link";
 import CarouselComponent from "@/components/carousel";
+import { useState } from "react";
 
 const Home: React.FC = () => {
   return (
