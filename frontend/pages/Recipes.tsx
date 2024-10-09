@@ -1,6 +1,9 @@
+import React, { Component } from "react";
 import Image from "next/image";
+import PropTypes from "prop-types";
+import "../app/globals.css";
 
-export default function Home() {
+export default function Recipes() {
   return (
     <div>
       <section id="title" className="recipe-heading-footer">
