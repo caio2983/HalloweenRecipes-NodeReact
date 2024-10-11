@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config()
 
 const prisma = new PrismaClient();
+module.exports = prisma;
 
 async function main() {
   // const receita = await prisma.receita.create({
