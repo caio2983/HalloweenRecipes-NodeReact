@@ -53,11 +53,11 @@ const Home: React.FC = () => {
         </div>
 
         <div className="flex flex-wrap gap-[32px] justify-center px-[1%]">
+          <CategoryCard title="Sweets"></CategoryCard>
+          {/* <CategoryCard></CategoryCard>
           <CategoryCard></CategoryCard>
           <CategoryCard></CategoryCard>
-          <CategoryCard></CategoryCard>
-          <CategoryCard></CategoryCard>
-          <CategoryCard></CategoryCard>
+          <CategoryCard></CategoryCard> */}
         </div>
 
         {/* <div className=" w-[80vw]">

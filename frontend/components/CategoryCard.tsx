@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "next/image";
+import { CategoryCardProps } from "@/app/interfaces/CategoryCardInterface";
 
-export default function CategoryCard() {
+const CategoryCard: React.FC<CategoryCardProps> = ({ title }) => {
   return (
     <div className="w-[45vw] h-[70vh]  flex flex-col items-center">
       <div className="h-[70%] w-full relative mb-[16px]">
@@ -17,8 +18,10 @@ export default function CategoryCard() {
         />
       </div>
 
-      <h2 className="text-darkPurple font-body bold">Sweets</h2>
+      <h2 className="text-darkPurple font-body bold">{title}</h2>
       <p className="text-pumpkinOrange font-body ">Description</p>
     </div>
   );
-}
+};
+
+export default CategoryCard;
