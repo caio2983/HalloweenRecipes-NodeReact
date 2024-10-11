@@ -10,7 +10,7 @@ class CarouselComponent extends Component {
     return (
       <Carousel>
         <Carousel.Item>
-          <div className="h-[70vh]">
+          <div className="h-[80vh]">
             <Image
               src="/static/spookycookies.jpg"
               alt="Spooky Cookies"
@@ -25,7 +25,7 @@ class CarouselComponent extends Component {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <div className="h-[70vh]">
+          <div className="h-[80vh]">
             <Image
               src="/static/spookycookies.jpg"
               alt="Spooky Cookies"
@@ -39,7 +39,7 @@ class CarouselComponent extends Component {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <div className="h-[70vh]">
+          <div className="h-[80vh]">
             <Image
               src="/static/spookycookies.jpg"
               alt="Spooky Cookies"

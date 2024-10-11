@@ -8,7 +8,7 @@ import { useState } from "react";
 const Home: React.FC = () => {
   return (
     <div>
-      <section id="carousel-container" className="p-32 py-0 h-[80vh]">
+      <section id="carousel-container" className="py-0 h-[80vh]">
         <CarouselComponent></CarouselComponent>
       </section>
 

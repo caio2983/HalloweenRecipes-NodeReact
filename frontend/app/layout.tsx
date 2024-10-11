@@ -28,31 +28,23 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <header className="h-[20vh] flex items-center justify-center">
-        <div className="flex flex-col items-center justify-center w-1/2 gap-5">
-          <div className="flex w-full justify-center gap-12 items-center">
-            <span className="h-[34px] w-[64px] relative">
-              <Image
-                src="/images/pumpkin.gif"
-                layout="fill"
-                objectFit="cover"
-                alt="pumpkin gif"
-              ></Image>
-            </span>
-            <h1>Halloween Recipes</h1>
-            <span className="h-[34px] w-[64px]  relative">
-              <Image
-                src="/images/pumpkin.gif"
-                layout="fill"
-                objectFit="cover"
-                alt="pumpkin gif"
-              ></Image>
-            </span>
-          </div>
-          <span className="h-px w-full bg-red-500"></span>
+      <header className="h-[10vh] flex items-center justify-between  px-[32px] border-b-2">
+        <div className="flex w-full justify-center gap-[4px] items-center w-auto">
+          <h1 className="text-2xl whitespace-nowrap m-0">Halloween Recipes</h1>
+          <span className="h-[34px] w-[64px]  relative">
+            <Image
+              src="/images/pumpkin.gif"
+              fill
+              objectFit="cover"
+              alt="pumpkin gif"
+            ></Image>
+          </span>
         </div>
-        <Link href="/">Home </Link>
-        <Link href="/Recipes">Recipes</Link>
+
+        <span className="flex gap-[16px] items-center">
+          <Link href="/">Home </Link>
+          <Link href="/Recipes">Recipes</Link>
+        </span>
       </header>
 
       {children}
