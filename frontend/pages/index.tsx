@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import "../app/globals.css";
 import Link from "next/link";
-import CarouselComponent from "@/components/carousel";
-import CategoryCard from "@/components/categoryCard";
+import CarouselComponent from "@/components/Carousel";
+import CategoryCard from "@/components/CategoryCard";
 import { useState } from "react";
 
 const Home: React.FC = () => {
@@ -43,7 +43,7 @@ const Home: React.FC = () => {
 
       <section
         id="recipe-categories"
-        className="flex flex-col gap-[50px] items-center h-auto"
+        className="flex flex-col gap-[50px] items-center h-auto px-10%"
       >
         <div className="w-full flex flex-col items-center">
           <h2 className="mb-[16px] text-white font-body font-bold">
@@ -52,7 +52,13 @@ const Home: React.FC = () => {
           <span className="block h-[2px] bg-bloodRed w-[30%] "></span>
         </div>
 
-        <CategoryCard></CategoryCard>
+        <div className="flex flex-wrap gap-[32px] justify-center px-[1%]">
+          <CategoryCard></CategoryCard>
+          <CategoryCard></CategoryCard>
+          <CategoryCard></CategoryCard>
+          <CategoryCard></CategoryCard>
+          <CategoryCard></CategoryCard>
+        </div>
 
         {/* <div className=" w-[80vw]">
           <ul className=" flex items-center flex-col justify-around gap-0 px-16 py-8 h-full">

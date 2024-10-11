@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import CarouselComponent from "@/components/carousel";
+import CarouselComponent from "@/components/Carousel";
 import PropTypes from "prop-types";
 import "../../app/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";

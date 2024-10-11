@@ -23,7 +23,7 @@ fastify.register(require( "@fastify/postgres"), {
  
 fastify.get('/', async (request, reply) => {
     try {
-      const categorias = await prisma.categoria.findMany(); 
+      const categorias = await prisma.receita.findMany(); 
       reply.send(categorias);
     } catch (error) {
       console.error("Erro ao executar a consulta:", error);
@@ -32,7 +32,7 @@ fastify.get('/', async (request, reply) => {
   });
   
 
-fastify.listen({ port: 3000 }, function (err, address) {
+fastify.listen({ port: 5000 }, function (err, address) {
   if (err) {
     fastify.log.error(err)
     process.exit(1)
