@@ -29,8 +29,8 @@ export default function RootLayout({
   return (
     <>
       <header className="h-[10vh] flex items-center justify-between  px-[32px] border-b-2 border-darkPurple">
-        <div className="flex w-full justify-center gap-[4px] items-center w-auto">
-          <h1 className="text-2xl whitespace-nowrap m-0 text-darkPurple font-title">
+        <div className="flex w-full h-full justify-center gap-[16px] items-center w-auto">
+          <h1 className="text-3xl whitespace-nowrap m-0 text-darkPurple font-title">
             Halloween Recipes
           </h1>
           <span className="h-[34px] w-[64px]  relative">
