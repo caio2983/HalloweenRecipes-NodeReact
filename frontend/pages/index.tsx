@@ -3,11 +3,12 @@ import Image from "next/image";
 import "../app/globals.css";
 import Link from "next/link";
 import CarouselComponent from "@/components/carousel";
+import CategoryCard from "@/components/categoryCard";
 import { useState } from "react";
 
 const Home: React.FC = () => {
   return (
-    <div className="flex flex-col gap-[40px]">
+    <div className="flex flex-col gap-[100px]">
       <section id="carousel-container" className="py-0 h-[80vh] ">
         <CarouselComponent></CarouselComponent>
       </section>
@@ -40,8 +41,20 @@ const Home: React.FC = () => {
         </p>
       </section>
 
-      <section id="recipe-categories" className="flex h-[100vh] ">
-        <div className=" w-[80vw]">
+      <section
+        id="recipe-categories"
+        className="flex flex-col gap-[50px] items-center h-auto"
+      >
+        <div className="w-full flex flex-col items-center">
+          <h2 className="mb-[16px] text-white font-body font-bold">
+            Recipe categories
+          </h2>
+          <span className="block h-[2px] bg-bloodRed w-[30%] "></span>
+        </div>
+
+        <CategoryCard></CategoryCard>
+
+        {/* <div className=" w-[80vw]">
           <ul className=" flex items-center flex-col justify-around gap-0 px-16 py-8 h-full">
             <div className="border-2 border-black w-full h-1/5">
               <li>
@@ -73,14 +86,6 @@ const Home: React.FC = () => {
               </li>
             </div>
           </ul>
-        </div>
-        {/* <div className="w-[20vw] h-full relative">
-          <Image
-            src="/images/brewing.gif"
-            layout="fill"
-            objectFit="cover"
-            alt="pumpkin gif"
-          ></Image>
         </div> */}
       </section>
     </div>
