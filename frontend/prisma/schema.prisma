@@ -21,6 +21,7 @@ model Receita {
   serves       String?
   font         String[]
   ingredientes String[]
+  imageLink    String?
   categoriaId  Int      
   categoria    Categoria @relation(fields: [categoriaId], references: [id]) 
 }
