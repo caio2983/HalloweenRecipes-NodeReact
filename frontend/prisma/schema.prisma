@@ -20,7 +20,7 @@ model Receita {
   cookingTime  String?
   serves       String?
   font         String[]
-  ingredientes String[]
+  ingredientes Json?
   imageLink    String?
   categoriaId  Int      
   categoria    Categoria @relation(fields: [categoriaId], references: [id]) 
