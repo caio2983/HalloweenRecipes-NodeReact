@@ -8,9 +8,9 @@ import Image from "next/image";
 class CarouselComponent extends Component {
   render() {
     return (
-      <Carousel>
+      <Carousel className="border-b-2 border-darkPurple ">
         <Carousel.Item>
-          <div className="h-[80vh]">
+          <div className="h-[80vh] ">
             <Image
               src="/static/spookycookies.jpg"
               alt="Spooky Cookies"

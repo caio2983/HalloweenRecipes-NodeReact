@@ -7,9 +7,38 @@ import { useState } from "react";
 
 const Home: React.FC = () => {
   return (
-    <div>
-      <section id="carousel-container" className="py-0 h-[80vh]">
+    <div className="flex flex-col gap-[40px]">
+      <section id="carousel-container" className="py-0 h-[80vh] ">
         <CarouselComponent></CarouselComponent>
+      </section>
+
+      <section
+        id="home-text"
+        className="flex flex-col gap-[50px] items-center h-auto"
+      >
+        <div className="w-full flex flex-col items-center">
+          <div className="relative h-[200px] w-[200px]">
+            <Image
+              src="/images/ghost.gif"
+              fill
+              objectFit="cover"
+              alt="pumpkin gif"
+            ></Image>
+          </div>
+          <span className="block h-[2px] bg-bloodRed w-[30%] "></span>
+        </div>
+        <p className="font-body text-bloodRed px-[10%] text-xl text-center ">
+          From eerie treats to spooky feasts, Halloween Recipes brings you a
+          hauntingly delicious collection of recipes that will make your
+          Halloween unforgettable. Whether you're hosting a ghoulish gathering
+          or just getting into the spooky spirit, our recipes are crafted to
+          bring both thrills and chills to your table. Our head chef, inspired
+          by the eerie atmosphere of Halloween, has created an array of
+          frighteningly fun dishes, from devilish desserts to monstrous mains.
+          Explore spine-chilling culinary creations that range from the wickedly
+          simple to the devilishly elaborate, perfect for your next haunted
+          celebration!
+        </p>
       </section>
 
       <section id="recipe-categories" className="flex h-[100vh] ">
@@ -46,14 +75,14 @@ const Home: React.FC = () => {
             </div>
           </ul>
         </div>
-        <div className="w-[20vw] h-full relative">
+        {/* <div className="w-[20vw] h-full relative">
           <Image
             src="/images/brewing.gif"
             layout="fill"
             objectFit="cover"
             alt="pumpkin gif"
           ></Image>
-        </div>
+        </div> */}
       </section>
     </div>
   );

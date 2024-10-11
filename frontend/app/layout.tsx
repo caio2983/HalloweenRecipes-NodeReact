@@ -30,7 +30,9 @@ export default function RootLayout({
     <>
       <header className="h-[10vh] flex items-center justify-between  px-[32px] border-b-2 border-darkPurple">
         <div className="flex w-full justify-center gap-[4px] items-center w-auto">
-          <h1 className="text-2xl whitespace-nowrap m-0">Halloween Recipes</h1>
+          <h1 className="text-2xl whitespace-nowrap m-0 text-darkPurple font-title">
+            Halloween Recipes
+          </h1>
           <span className="h-[34px] w-[64px]  relative">
             <Image
               src="/images/pumpkin.gif"

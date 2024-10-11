@@ -18,6 +18,11 @@ const config: Config = {
         neonGreen: "#39FF14", 
         bloodRed: "#8A0707", 
       },
+      fontFamily: {
+        title: ['Bebas Neue','Playfair Display',  'sans-serif'], // Fontes para títulos
+        body: ['Open Sans', 'Source Sans Pro', 'Nunito', 'sans-serif'], // Fontes para o corpo do texto
+      },
+
     },
   },
   plugins: [],
