@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <CategoriesProvider>
-      <RootLayout>
+    <RootLayout>
+      <CategoriesProvider>
         <Component {...pageProps} />
-      </RootLayout>
-    </CategoriesProvider>
+      </CategoriesProvider>
+    </RootLayout>
   );
 };
 

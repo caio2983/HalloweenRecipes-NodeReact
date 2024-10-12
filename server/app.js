@@ -32,7 +32,23 @@ fastify.get('/', async (request, reply) => {
       reply.status(500).send({ error: 'Internal Server Error' });
     }
   });
-  
+
+fastify.get('/:id', async (request, reply) => {
+    try {
+      const { id } = request.params;
+     
+      const receitas = await prisma.receita.findMany({
+        where: {categoriaId : parseInt(id)} 
+      }
+     
+      );
+      console.log("AAAAAAAAAAAA",receitas)
+      reply.send(receitas);
+    } catch (error) {
+      console.error("Erro ao executar a consulta:", error);
+      reply.status(500).send({ error: 'Internal Server Error' });
+    }
+  });
 
 fastify.listen({ port: 5000 }, function (err, address) {
   if (err) {
