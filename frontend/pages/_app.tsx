@@ -2,6 +2,7 @@ import RootLayout from "../app/layout";
 import { AppProps } from "next/app";
 import { Metadata } from "next";
 import "../app/globals.css";
+import { CategoriesProvider } from "@/app/contexts/CategoriesContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -10,9 +11,11 @@ export const metadata: Metadata = {
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <RootLayout>
-      <Component {...pageProps} />
-    </RootLayout>
+    <CategoriesProvider>
+      <RootLayout>
+        <Component {...pageProps} />
+      </RootLayout>
+    </CategoriesProvider>
   );
 };
 

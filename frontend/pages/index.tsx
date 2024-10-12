@@ -4,41 +4,11 @@ import "../app/globals.css";
 import Link from "next/link";
 import CarouselComponent from "@/components/Carousel";
 import CategoryCard from "@/components/CategoryCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import CategoriesContext from "@/app/contexts/CategoriesContext";
 
 const Home: React.FC = () => {
-  const categories = [
-    {
-      title: "Sweets",
-      description:
-        "Delicious Halloween-themed candies and spooky treats for all ages.",
-      link: "/recipeCategory/doces",
-    },
-    {
-      title: "Beverages",
-      description:
-        "Chilling drinks and potions to serve at your Halloween party.",
-      link: "/recipeCategory/bebidas",
-    },
-    {
-      title: "Desserts",
-      description:
-        "Frightfully fun desserts that are perfect for your spooky celebration.",
-      link: "/recipeCategory/sobremesas",
-    },
-    {
-      title: "Cakes",
-      description:
-        "Spooky cakes that are as tasty as they are terrifyingly creative.",
-      link: "/recipeCategory/bolos",
-    },
-    {
-      title: "Snacks",
-      description:
-        "Quick and creepy snacks to keep the Halloween spirit alive.",
-      link: "/recipeCategory/snacks",
-    },
-  ];
+  const categories: any = useContext(CategoriesContext);
 
   return (
     <div className="flex flex-col gap-[100px]">
@@ -86,7 +56,7 @@ const Home: React.FC = () => {
         </div>
 
         <div className="flex flex-wrap gap-[32px] justify-center px-[1%]">
-          {categories.map((category) => {
+          {categories.map((category: any) => {
             return (
               <CategoryCard
                 title={category.title}
