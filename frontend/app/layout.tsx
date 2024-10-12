@@ -45,7 +45,7 @@ export default function RootLayout({
 
         <span className="flex gap-[16px] items-center">
           <Link href="/">Home </Link>
-          <Link href="/Recipes">Recipes</Link>
+          <Link href="/Recipes">Categories</Link>
         </span>
       </header>
 

@@ -17,7 +17,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
       <div className="h-[70%] w-full relative mb-[16px]">
         <Link href={link}>
           <Image
-            src="/static/spookycookies.jpg"
+            src="/static/beverage.jpeg"
             alt="Spooky Cookies"
             fill
             objectFit="cover"
