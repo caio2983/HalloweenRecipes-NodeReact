@@ -16,11 +16,11 @@ export default function RecipeCategory() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const categories: any = useContext(CategoriesContext);
 
   const categoryId = router.query.id
     ? parseInt(router.query.id as string, 10)
     : 0;
-  const categories: any = useContext(CategoriesContext);
 
   useEffect(() => {
     if (categoryId !== null) {
@@ -54,7 +54,7 @@ export default function RecipeCategory() {
     <div>
       <section
         id="title"
-        className="flex flex-col items-center justify-center border-b-2 border-darkPurple h-[35vh] px-[20%] gap-[16px]"
+        className="flex flex-col items-center justify-center border-b-2 border-darkPurple h-[35vh] px-[20%] gap-[16px] mb-[50px]"
       >
         <h1 className="font-body bold text-pumpkinOrange">
           {category} recipes
@@ -65,7 +65,33 @@ export default function RecipeCategory() {
         </p>
       </section>
 
-      <section className="w-1/4 h-1/4"></section>
+      <section id="recipe-cards" className="h-auto w-full">
+        {data.map((recipe: any) => {
+          return (
+            <div className="h-[300px] w-[500px] border-2 border-bloodRed">
+              <div
+                key={recipe.id}
+                className="h-[70%] w-full relative mb-[16px]"
+              >
+                <Image
+                  src={recipe.imageLink}
+                  alt={recipe.titulo}
+                  fill
+                  objectFit="cover"
+                />
+              </div>
+
+              <h2 className="text-darkPurple font-body bold">
+                {recipe.titulo}
+              </h2>
+
+              <p className="text-pumpkinOrange font-body ">
+                {recipe.descricao}
+              </p>
+            </div>
+          );
+        })}
+      </section>
     </div>
   );
 }
