@@ -29,3 +29,6 @@ body,html {
   width: 100%;
 }
 
+.opacidade {
+  opacity: 0.3;
+}
