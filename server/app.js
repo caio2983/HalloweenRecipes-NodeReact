@@ -23,7 +23,7 @@ fastify.register(require( "@fastify/postgres"), {
   });
 
  
-fastify.get('/', async (request, reply) => {
+fastify.get('/', async (request, reply) => { // Rota usada no componente do Carousel que está na home page
     try {
       const categorias = await prisma.receita.findMany(); 
       reply.send(categorias);
@@ -33,16 +33,18 @@ fastify.get('/', async (request, reply) => {
     }
   });
 
-fastify.get('/:id', async (request, reply) => {
+
+fastify.get('/:id', async (request, reply) => { // Rota usada na navegação para as páginas de categorias de receitas
     try {
       const { id } = request.params;
      
       const receitas = await prisma.receita.findMany({
-        where: {categoriaId : parseInt(id)} 
-      }
+        where: {categoriaId : parseInt(id)} // Exemplo: GET no /Beverages/:id faz com que o Prisma se comunique com a database
+        // e retorne as receitas com categoriaId = id
+      } 
      
       );
-      console.log("AAAAAAAAAAAA",receitas)
+      
       reply.send(receitas);
     } catch (error) {
       console.error("Erro ao executar a consulta:", error);
