@@ -8,7 +8,8 @@ import { useState, useEffect, useContext } from "react";
 import CategoriesContext from "@/app/contexts/CategoriesContext";
 
 const Home: React.FC = () => {
-  const categories: any = useContext(CategoriesContext);
+  const categories: any = useContext(CategoriesContext); // Contexto que define o array '' categories '' , no qual
+  // estão definidos dados que a UI usa nos cards de categorias de receitas
 
   return (
     <div className="flex flex-col gap-[100px]">

@@ -20,7 +20,9 @@ export default function RecipeCategory() {
 
   const categoryId = router.query.id
     ? parseInt(router.query.id as string, 10)
-    : 0;
+    : 0; // Quando o client entra na página da categoria, router.query.id ainda não está definido
+  //, por isso o código faz essa verificação para que categoryId só seja definido quando router.query.id estiver definido
+  // caso contrário o useEffect usa categoryId como NaN
 
   useEffect(() => {
     if (categoryId !== null) {
@@ -30,7 +32,7 @@ export default function RecipeCategory() {
         try {
           const response = await fetch(
             `http://127.0.0.1:5000/${categoryId + 1}`
-          );
+          ); // Adicionar 1 ao categoryId pra alinhar com o categoriaId do banco de dados
 
           if (!response.ok) {
             throw new Error("Error in network response");

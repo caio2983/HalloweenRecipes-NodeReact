@@ -9,6 +9,8 @@ interface CategoriesProviderProps {
 }
 
 export const CategoriesProvider = ({ children }: CategoriesProviderProps) => {
+  // Dados usados pela UI nos cards de categorias e links para as páginas de categorias
+
   const [categories] = useState([
     {
       title: "Sweets",
