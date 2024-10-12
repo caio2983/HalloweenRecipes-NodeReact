@@ -1,3 +1,5 @@
  export interface CategoryCardProps {
-    title: string; // A prop 'title' é uma string
+    title: string; 
+    description: string;
+    link: string;
   }
