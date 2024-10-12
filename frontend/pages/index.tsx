@@ -4,7 +4,7 @@ import "../app/globals.css";
 import Link from "next/link";
 import CarouselComponent from "@/components/Carousel";
 import CategoryCard from "@/components/CategoryCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home: React.FC = () => {
   const categories = [
@@ -96,40 +96,6 @@ const Home: React.FC = () => {
             );
           })}
         </div>
-
-        {/* <div className=" w-[80vw]">
-          <ul className=" flex items-center flex-col justify-around gap-0 px-16 py-8 h-full">
-            <div className="border-2 border-black w-full h-1/5">
-              <li>
-                <Link href="/recipeCategory/doces">Doces</Link>
-              </li>
-            </div>
-
-            <div className="border-2 border-black w-full h-1/5">
-              <li>
-                <Link href="/recipeCategory/bebidas">Bebidas</Link>
-              </li>
-            </div>
-
-            <div className="border-2 border-black w-full h-1/5">
-              <li>
-                <Link href="/recipeCategory/sobremesas">Sobremesas</Link>
-              </li>
-            </div>
-
-            <div className="border-2 border-black w-full h-1/5">
-              <li>
-                <Link href="/recipeCategory/doces">Bolos</Link>
-              </li>
-            </div>
-
-            <div className="border-2 border-black w-full h-1/5">
-              <li>
-                <Link href="/recipeCategory/doces">Snacks</Link>
-              </li>
-            </div>
-          </ul>
-        </div> */}
       </section>
     </div>
   );

@@ -18,7 +18,9 @@ fastify.register(require( "@fastify/postgres"), {
     connectionString: process.env.DATABASE_URL
   })
 
-
+  fastify.register(require('@fastify/cors'), {
+    origin: '*', 
+  });
 
  
 fastify.get('/', async (request, reply) => {
