@@ -24,4 +24,5 @@ model Receita {
   imageLink    String?
   categoriaId  Int      
   categoria    Categoria @relation(fields: [categoriaId], references: [id]) 
+  instructions Json?
 }
