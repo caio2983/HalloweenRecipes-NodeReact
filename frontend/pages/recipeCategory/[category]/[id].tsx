@@ -7,8 +7,10 @@ import "../../../app/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CategoriesContext from "@/app/contexts/CategoriesContext";
 import { useContext, useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function RecipeCategory() {
+  // [id] : id da categoria de receita
   const router = useRouter();
   const { category, id } = router.query;
 
@@ -73,26 +75,31 @@ export default function RecipeCategory() {
       >
         {data.map((recipe: any) => {
           return (
-            <div className="h-[400px] w-[500px] m-[32px]  ">
-              <div key={recipe.id} className="h-[60%] w-full relative mb-[8px]">
-                <Image
-                  src={recipe.imageLink}
-                  alt={recipe.titulo}
-                  fill
-                  objectFit="cover"
-                />
-              </div>
+            <Link href={`/recipePage/${recipe.titulo}/${recipe.id}`}>
+              <div className="h-[400px] w-[500px] m-[32px]  ">
+                <div
+                  key={recipe.id}
+                  className="h-[60%] w-full relative mb-[8px]"
+                >
+                  <Image
+                    src={recipe.imageLink}
+                    alt={recipe.titulo}
+                    fill
+                    objectFit="cover"
+                  />
+                </div>
 
-              <div className="flex flex-col justify-center p-[5%] h-auto">
-                <h2 className="text-darkPurple font-body bold ">
-                  {recipe.titulo}
-                </h2>
+                <div className="flex flex-col justify-center p-[5%] h-auto">
+                  <h2 className="text-darkPurple font-body bold ">
+                    {recipe.titulo}
+                  </h2>
 
-                <p className="text-pumpkinOrange font-body line-clamp-3 m-0 ">
-                  {recipe.descricao}
-                </p>
+                  <p className="text-pumpkinOrange font-body line-clamp-3 m-0 ">
+                    {recipe.descricao}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </section>

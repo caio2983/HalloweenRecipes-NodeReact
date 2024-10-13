@@ -34,13 +34,32 @@ fastify.get('/', async (request, reply) => { // Rota usada no componente do Caro
   });
 
 
-fastify.get('/:id', async (request, reply) => { // Rota usada na navegação para as páginas de categorias de receitas
+fastify.get('/:id', async (request, reply) => { // Rota usada na navegação para as páginas de categorias de receitas.id : id da categoria de receita
     try {
       const { id } = request.params;
      
       const receitas = await prisma.receita.findMany({
         where: {categoriaId : parseInt(id)} // Exemplo: GET no /Beverages/:id faz com que o Prisma se comunique com a database
         // e retorne as receitas com categoriaId = id
+      } 
+     
+      );
+      
+      reply.send(receitas);
+    } catch (error) {
+      console.error("Erro ao executar a consulta:", error);
+      reply.status(500).send({ error: 'Internal Server Error' });
+    }
+  });
+
+
+
+  fastify.get('/recipe/:recipeid', async (request, reply) => { // Rota usada na navegação para as páginas de receitas específicas
+    try {
+      const { recipeid } = request.params;
+     
+      const receitas = await prisma.receita.findMany({
+        where: {id : parseInt(recipeid)} 
       } 
      
       );
@@ -60,3 +79,6 @@ fastify.listen({ port: 5000 }, function (err, address) {
 
   console.log(`Server is now listening on ${address}`)
 })
+
+
+
