@@ -54,16 +54,18 @@ export default function RecipePage() {
         id="title"
         className="recipe-heading-footer text-pumpkinOrange font-title"
       >
-        <h2> {(data as Recipe[])[0].titulo}</h2>
+        <h2>{data.length > 0 ? data[0].titulo : "Loading..."}</h2>
       </section>
 
       <section id="recipe-image" className="relative">
-        <Image
-          src={(data as Recipe[])[0].imageLink}
-          alt="Spooky Cookies"
-          layout="fill"
-          objectFit="cover"
-        />
+        {data.length > 0 && (
+          <Image
+            src={data[0].imageLink}
+            alt="Spooky Cookies"
+            layout="fill"
+            objectFit="cover"
+          />
+        )}
       </section>
 
       <section id="recipe" className="flex ">
@@ -75,22 +77,23 @@ export default function RecipePage() {
             Ingredients
           </h3>
           <ul className="p-0">
-            {(data as Recipe[])[0].ingredientes.map((ingredient: any) => {
-              return (
-                <li className="flex flex-col gap-[8px] ">
-                  <h4 className="text-pumpkinOrange font-body self-center ">
-                    {ingredient[0]}
-                  </h4>
-                  {ingredient.slice(1).map((item: string, index: number) => {
-                    return (
-                      <p key={index} className="text-white font-body">
-                        {item}
-                      </p>
-                    );
-                  })}
-                </li>
-              );
-            })}
+            {data.length > 0 &&
+              data[0].ingredientes.map((ingredient: any) => {
+                return (
+                  <li className="flex flex-col gap-[8px] " key={ingredient[0]}>
+                    <h4 className="text-pumpkinOrange font-body self-center ">
+                      {ingredient[0]}
+                    </h4>
+                    {ingredient.slice(1).map((item: string, index: number) => {
+                      return (
+                        <p key={index} className="text-white font-body">
+                          {item}
+                        </p>
+                      );
+                    })}
+                  </li>
+                );
+              })}
           </ul>
         </div>
 
