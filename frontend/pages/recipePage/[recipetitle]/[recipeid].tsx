@@ -7,12 +7,12 @@ import "../../../app/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CategoriesContext from "@/app/contexts/CategoriesContext";
 import { useContext, useEffect, useState } from "react";
+import { Recipe } from "@/app/interfaces/Recipe";
 
 export default function RecipePage() {
   const router = useRouter();
   const { recipetitulo, recipeid } = router.query;
-
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Recipe[]>([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -48,5 +48,61 @@ export default function RecipePage() {
     }
   }, [recipeId]);
 
-  return <div></div>;
+  return (
+    <div>
+      <section
+        id="title"
+        className="recipe-heading-footer text-pumpkinOrange font-title"
+      >
+        <h2> {(data as Recipe[])[0].titulo}</h2>
+      </section>
+
+      <section id="recipe-image" className="relative">
+        <Image
+          src={(data as Recipe[])[0].imageLink}
+          alt="Spooky Cookies"
+          layout="fill"
+          objectFit="cover"
+        />
+      </section>
+
+      <section id="recipe" className="flex ">
+        <div
+          id="ingredients"
+          className="w-1/4 h-[500px] flex flex-col items-center px-[2%]"
+        >
+          <h3 className="text-darkPurple font-title font-bold mb-[32px]">
+            Ingredients
+          </h3>
+          <ul className="p-0">
+            {(data as Recipe[])[0].ingredientes.map((ingredient: any) => {
+              return (
+                <li className="flex flex-col gap-[8px] ">
+                  <h4 className="text-pumpkinOrange font-body self-center ">
+                    {ingredient[0]}
+                  </h4>
+                  {ingredient.slice(1).map((item: string, index: number) => {
+                    return (
+                      <p key={index} className="text-white font-body">
+                        {item}
+                      </p>
+                    );
+                  })}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        <div
+          id="instructions"
+          className="w-3/4 h-[850px] flex flex-col items-center"
+        >
+          <h3 className="text-darkPurple font-title font-bold">
+            Cooking instructions
+          </h3>
+        </div>
+      </section>
+    </div>
+  );
 }
