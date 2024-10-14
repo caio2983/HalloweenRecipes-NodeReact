@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import "../app/globals.css";
@@ -10,6 +11,31 @@ import CategoriesContext from "@/app/contexts/CategoriesContext";
 const Home: React.FC = () => {
   const categories: any = useContext(CategoriesContext); // Contexto que define o array '' categories '' , no qual
   // estão definidos dados que a UI usa nos cards de categorias de receitas
+
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:5000/");
+        if (!response.ok) {
+          throw new Error("Error network repsonse");
+        }
+
+        const result = await response.json();
+        setData(result);
+        console.log(data);
+      } catch (error: any) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="flex flex-col gap-[100px]">
@@ -63,6 +89,7 @@ const Home: React.FC = () => {
                 title={category.title}
                 description={category.description}
                 link={category.link}
+                thumb={category.thumb}
               ></CategoryCard>
             );
           })}

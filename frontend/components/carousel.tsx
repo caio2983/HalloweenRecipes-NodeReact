@@ -33,7 +33,7 @@ export default function CarouselComponent() {
 
   return (
     <Carousel className="border-b-2 border-darkPurple ">
-      {data.slice(0, 5).map((recipe: any) => {
+      {data.slice(1, 6).map((recipe: any) => {
         return (
           <Carousel.Item>
             <div className="h-[80vh] ">

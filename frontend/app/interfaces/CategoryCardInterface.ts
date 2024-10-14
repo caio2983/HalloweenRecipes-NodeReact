@@ -2,4 +2,5 @@
     title: string; 
     description: string;
     link: string;
+    thumb: string;
   }

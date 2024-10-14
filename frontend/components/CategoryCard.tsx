@@ -11,17 +11,13 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   title,
   description,
   link,
+  thumb,
 }) => {
   return (
     <div className="w-[45vw] h-[70vh]  flex flex-col items-center">
       <div className="h-[70%] w-full relative mb-[16px]">
         <Link href={link}>
-          <Image
-            src="/static/beverage.jpeg"
-            alt="Spooky Cookies"
-            fill
-            objectFit="cover"
-          />
+          <Image src={thumb} alt="Spooky Cookies" fill objectFit="cover" />
         </Link>
       </div>
 

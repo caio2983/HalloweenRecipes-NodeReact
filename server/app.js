@@ -71,6 +71,8 @@ fastify.get('/:id', async (request, reply) => { // Rota usada na navegação par
     }
   });
 
+ 
+
 fastify.listen({ port: 5000 }, function (err, address) {
   if (err) {
     fastify.log.error(err)
