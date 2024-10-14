@@ -52,24 +52,16 @@ export default function CarouselComponent() {
               </div>
 
               <Carousel.Caption>
-                <h3 className="font-body font-bold m-0 ">{recipe.titulo}</h3>
-                <p>
-                  <a
-                    className="no-underline text-zinc-300 font-body"
-                    href={recipe.font[0]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Source
-                  </a>
-                </p>
-                <p className="font-body font-bold text-pumpkinOrange">
+                <h3 className="font-body font-bold m-0 mb-[16px] ">
+                  {recipe.titulo}
+                </h3>
+
+                <p className="font-body font-bold text-pumpkinOrange relative">
                   {recipe.descricao}
                 </p>
               </Carousel.Caption>
             </Link>
           </Carousel.Item>
-          //{" "}
         );
       })}
     </Carousel>
