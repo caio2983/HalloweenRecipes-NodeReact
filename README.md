@@ -12,7 +12,7 @@
 
 
 <h2>Getting started</h2>
-<p>git clone</p>
+<p>git clone https://github.com/caio2983/HalloweenRecipes-NodeReact.git</p>
 <p>npm install</p>
 
 
