@@ -49,7 +49,7 @@ export default function RecipePage() {
   }, [recipeId]);
 
   return (
-    <div>
+    <div className="">
       <section
         id="title"
         className="recipe-heading-footer text-pumpkinOrange font-title"
@@ -78,10 +78,10 @@ export default function RecipePage() {
         <span className="block h-[2px] bg-bloodRed w-[30%] "></span>
       </section>
 
-      <section id="recipe" className="flex ">
+      <section id="recipe" className="flex px-[5%]">
         <div
           id="ingredients"
-          className="w-1/4 h-[500px] flex flex-col items-center px-[2%]"
+          className="w-1/2 h-[500px] flex flex-col items-center px-[2%] mb-[64px]"
         >
           <h3 className="text-darkPurple font-title font-bold mb-[32px]">
             Ingredients
@@ -91,7 +91,7 @@ export default function RecipePage() {
               data[0].ingredientes.map((ingredient: any) => {
                 return (
                   <li className="flex flex-col gap-[8px] " key={ingredient[0]}>
-                    <h4 className="text-pumpkinOrange font-body self-center ">
+                    <h4 className="text-pumpkinOrange font-body self-center mb-[32px] ">
                       {ingredient[0]}
                     </h4>
                     {ingredient.slice(1).map((item: string, index: number) => {
@@ -109,9 +109,9 @@ export default function RecipePage() {
 
         <div
           id="instructions"
-          className="w-3/4 h-[850px] flex flex-col items-center"
+          className="w-1/2 h-[850px] flex flex-col items-center"
         >
-          <h3 className="text-darkPurple font-title font-bold">
+          <h3 className="text-darkPurple font-title font-bold mb-[64px]">
             Cooking instructions
           </h3>
 

@@ -44,8 +44,12 @@ export default function RootLayout({
         </div>
 
         <span className="flex gap-[16px] items-center">
-          <Link href="/">Home </Link>
-          <Link href="/Recipes">Categories</Link>
+          <Link
+            href="/"
+            className="no-underline font-body text-darkPurple text-bold"
+          >
+            Home{" "}
+          </Link>
         </span>
       </header>
 

@@ -21,9 +21,10 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
         </Link>
       </div>
 
-      <Link href={link}>
-        <h2 className="text-darkPurple font-body bold">{title}</h2>
+      <Link href={link} className="no-underline">
+        <h2 className="text-darkPurple font-body bold ">{title}</h2>
       </Link>
+
       <p className="text-pumpkinOrange font-body ">{description}</p>
     </div>
   );

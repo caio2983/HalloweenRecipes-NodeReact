@@ -75,7 +75,10 @@ export default function RecipeCategory() {
       >
         {data.map((recipe: any) => {
           return (
-            <Link href={`/recipePage/${recipe.titulo}/${recipe.id}`}>
+            <Link
+              href={`/recipePage/${recipe.titulo}/${recipe.id}`}
+              className="no-underline"
+            >
               <div className="h-[400px] w-[500px] m-[32px]  ">
                 <div
                   key={recipe.id}
