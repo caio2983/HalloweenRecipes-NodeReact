@@ -57,7 +57,7 @@ export default function RecipePage() {
         <h2>{data.length > 0 ? data[0].titulo : "Loading..."}</h2>
       </section>
 
-      <section id="recipe-image" className="relative">
+      <section id="recipe-image" className="relative mb-[64px]">
         {data.length > 0 && (
           <Image
             src={data[0].imageLink}
@@ -66,6 +66,16 @@ export default function RecipePage() {
             objectFit="cover"
           />
         )}
+      </section>
+
+      <section
+        id="recipe-description"
+        className="flex flex-col gap-[50px] items-center h-auto mb-[64px]"
+      >
+        <p className="font-body text-bloodRed px-[10%] text-xl text-center font-bold">
+          {data.length > 0 && data[0].descricao}
+        </p>
+        <span className="block h-[2px] bg-bloodRed w-[30%] "></span>
       </section>
 
       <section id="recipe" className="flex ">
@@ -104,6 +114,29 @@ export default function RecipePage() {
           <h3 className="text-darkPurple font-title font-bold">
             Cooking instructions
           </h3>
+
+          <ul>
+            {data.length > 0 &&
+              data[0].instructions.map((instruction: any) => {
+                return (
+                  <li
+                    className="flex flex-col gap-[16px] "
+                    key={instruction[0]}
+                  >
+                    {/* <p className="text-pumpkinOrange font-body self-center ">
+                    {instruction[0]}
+                  </p> */}
+                    {instruction.slice(0).map((item: string, index: number) => {
+                      return (
+                        <p key={index} className="text-white font-body">
+                          {item}
+                        </p>
+                      );
+                    })}
+                  </li>
+                );
+              })}
+          </ul>
         </div>
       </section>
     </div>
