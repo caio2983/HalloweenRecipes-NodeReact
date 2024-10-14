@@ -5,5 +5,5 @@ export interface Recipe {
   imageLink: string;
   instructions: string[][];
   descricao: string;
-  font: string;
+  font: string[];
 }

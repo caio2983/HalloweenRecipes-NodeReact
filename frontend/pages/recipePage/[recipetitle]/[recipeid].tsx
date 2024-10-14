@@ -52,9 +52,25 @@ export default function RecipePage() {
     <div className="">
       <section
         id="title"
-        className="recipe-heading-footer text-pumpkinOrange font-title"
+        className="recipe-heading-footer text-pumpkinOrange font-title flex flex-col"
       >
-        <h2>{data.length > 0 ? data[0].titulo : "Loading..."}</h2>
+        <h2 className="font-title">
+          {data.length > 0 ? data[0].titulo : "Loading..."}
+        </h2>
+        <p>
+          {data.length > 0 ? (
+            <a
+              className="no-underline text-zinc-300 font-body text-base"
+              href={data[0].font[0]}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source
+            </a>
+          ) : (
+            "Loading.."
+          )}
+        </p>
       </section>
 
       <section id="recipe-image" className="relative mb-[64px]">
